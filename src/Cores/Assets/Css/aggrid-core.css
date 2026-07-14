@@ -1,0 +1,11 @@
+.tableStriped .ag-cell {
+  border-right-color: rgb(226, 226, 226);
+}
+
+.tableStriped .ag-header-cell.ag-floating-filter {
+  border-right: 1px solid rgb(226, 226, 226);
+}
+
+.ag-root-wrapper {
+  border-radius: 6px;
+}

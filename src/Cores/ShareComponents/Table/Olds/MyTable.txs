@@ -1,0 +1,213 @@
+// import React, { Component } from "react";
+// import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
+// import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
+// import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
+
+// // import 'ag-grid-enterprise';
+// import { LicenseManager } from "ag-grid-enterprise";
+// LicenseManager.setLicenseKey(
+//   "CompanyName=UNICLOUD TECHNOLOGY GROUP .,JSC,LicensedGroup=UNICLOUD TECHNOLOGY GROUP .,JSC,LicenseType=MultipleApplications,LicensedConcurrentDeveloperCount=1,LicensedProductionInstancesCount=0,AssetReference=AG-023179,ExpiryDate=9_December_2022_[v2]_MTY3MDU0NDAwMDAwMA==114a22b36a8d0e5fcb7da758d74b875c"
+// );
+
+// //Constants
+// import CommonConst from "../../Constants/CommonConst";
+// import CommonHelper from "../../Helpers/CommonHelper";
+
+// const getColumn_Checkbox = (props) => {
+//   return {
+//     field: undefined,
+//     headerCheckboxSelection:
+//       props.rowSelection === CommonConst.table.rowSelection.multiple
+//         ? true
+//         : false,
+//     checkboxSelection: true,
+//     headerCheckboxSelectionFilteredOnly: true,
+//     // showDisabledCheckboxes: true,
+//     pinned: "left",
+//     // cellStyle: { borderRightColor: '#e2e2e2' },
+//     width: 50,
+//     maxWidth: 50,
+//     filter: false,
+//     sortable: false,
+//   };
+// };
+// const getColumns = (props) => {
+//   const ret = [];
+//   if (props.isHaveCheckbox === true) {
+//     ret.push(getColumn_Checkbox(props));
+//   }
+//   if (props.columnDefs) {
+//     ret.push(...props.columnDefs);
+//   }
+//   return ret;
+// };
+// // export default class MyTable extends AgGridReact {
+// export default class MyTable extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       columnDefs: getColumns(props),
+//       defaultColDef: {
+//         resizable: true,
+//         sortable: true,
+//         unSortIcon: true, //hiển thị icon sort
+//         // filter: true,
+//         // floatingFilter: true,//chế độ ô nhập ở header cho filter
+//         // filter: "agTextColumnFilter",
+//         // floatingFilterComponentParams: { suppressFilterButton: true },//ẩn nút button filter ở bên cạnh ô nhập filter
+//         suppressMenu: true, //ẩn button filter ở tiêu đề cột
+//       },
+//       // keyColumnName: props.keyColumnName
+//     };
+//     //refs
+//     this.myRef = React.createRef();
+//   }
+//   componentDidMount() {}
+
+//   //Lấy ds có phân cấp cha con
+//   getListParentChild = (listData, listDataRoot) => {
+//     listData.forEach((item) => {
+//       item.listChild = listDataRoot.filter(
+//         (s) => s[this.props.parentColumnName] === item[this.props.keyColumnName]
+//       );
+//       this.getListParentChild(item.listChild, listDataRoot);
+//     });
+//     // return listData;
+//   };
+//   //Lấy danh sách đã cấu hình dữ liệu cha con: orgHierarchy để khớp với thư viện ag-grid
+//   getListDataTree = (listData, listTree, orgHierarchy) => {
+//     listData.forEach((item) => {
+//       const orgHierarchyTemp = CommonUtil.isNull(orgHierarchy)
+//         ? [item[this.props.keyColumnName]]
+//         : [].concat(orgHierarchy, [item[this.props.keyColumnName]]);
+//       const itemTemp = {
+//         ...item,
+//         orgHierarchy: orgHierarchyTemp,
+//         listChild: null,
+//       };
+//       listTree.push(itemTemp);
+//       this.getListDataTree(item.listChild, listTree, orgHierarchyTemp);
+//     });
+//   };
+//   setRowData = (data) => {
+//     if (this.props.treeData && data) {
+//       //Xử lý ds có phân cấp
+//       let ret = data.filter((s) =>
+//         CommonUtil.isNull(s[this.props.parentColumnName])
+//       );
+//       const listNotQueryParent = data.filter(
+//         (s) =>
+//           !CommonUtil.isNull(s[this.props.parentColumnName]) &&
+//           !data.some(
+//             (x) =>
+//               x[this.props.keyColumnName] === s[this.props.parentColumnName]
+//           )
+//       );
+//       ret = ret.concat(listNotQueryParent);
+//       this.getListParentChild(ret, data);
+
+//       //Xử lý data truyền vào thư viện ag grid
+//       let result = [];
+//       this.getListDataTree(ret, result, undefined);
+//       setTimeout(() => {
+//         this.myRef.current.api.setRowData(result);
+//       }, 30);
+//     } else {
+//       setTimeout(() => {
+//         this.myRef.current.api.setRowData(data);
+//       }, 30);
+//     }
+//     // this.api.setRowData(data);
+//   };
+//   getSelectedRows = () => {
+//     return this.api.getSelectedRows();
+//   };
+//   showLoadingOverlay = () => {
+//     setTimeout(() => {
+//       this.myRef.current.api && this.myRef.current.api.showLoadingOverlay();
+//     }, 30);
+//   };
+//   sizeColumnsToFit = () => {
+//     setTimeout(() => {
+//       this.api.sizeColumnsToFit({
+//         defaultMinWidth: 100,
+//       });
+//     }, 30);
+//   };
+//   autoSizeAllColumns = () => {
+//     setTimeout(() => {
+//       // this.myRef.current.columnApi.autoSizeAllColumns(false);
+//       const allColumnIds = [];
+//       this.myRef.current.columnApi.getColumns().forEach((column) => {
+//         const columnId = column.getId();
+//         if (columnId !== "_action" && columnId !== "stt") {
+//           allColumnIds.push(column.getId());
+//         }
+//       });
+//       this.myRef.current.columnApi.autoSizeColumns(allColumnIds, false);
+//     }, 30);
+//   };
+
+//   setSelectedRows = (listSelected) => {
+//     const keyColumnName = this.props.keyColumnName;
+//     return this.api.forEachNode((node) =>
+//       node.setSelected(
+//         listSelected.some((s) => s[keyColumnName] === node.data[keyColumnName])
+//       )
+//     );
+//   };
+
+//   onGridReady = (params) => {
+//     this.api = params.api;
+//     this.columnApi = params.columnApi;
+//     this.props.onGridReady && this.props.onGridReady(params);
+//     // params.api.sizeColumnsToFit();
+//   };
+//   render() {
+//     return (
+//       <div
+//         className={
+//           CommonConst.css.tableStriped + " " + this.props.cf_classNameTheme
+//         }
+//         style={{ width: "100%", height: this.props.cf_height ?? "500px" }}
+//       >
+//         <AgGridReact
+//           columnDefs={this.state.columnDefs}
+//           defaultColDef={this.props.defaultColDef ?? this.state.defaultColDef}
+//           onGridReady={this.onGridReady}
+//           enableCellTextSelection={true} //lưới văn bản thông thường
+//           ensureDomOrder={true} //lưới văn bản thông thường
+//           onSortChanged={(e) => {
+//             e.api.refreshCells({
+//               columns: ["stt"],
+//             });
+//             this.props.onSortChanged && this.props.onSortChanged(e);
+//           }}
+//           onFilterChanged={(e) => {
+//             e.api.refreshCells({
+//               columns: ["stt"],
+//             });
+//             this.props.onSortChanged && this.props.onSortChanged();
+//           }}
+//           ref={this.myRef}
+//           rowSelection={this.props.rowSelection}
+//           // suppressRowClickSelection={true}
+//           onSelectionChanged={this.props.onSelectionChanged}
+//           rowData={this.props.rowData}
+//           autoGroupColumnDef={this.props.autoGroupColumnDef}
+//           treeData={this.props.treeData}
+//           animateRows={this.props.animateRows}
+//           groupDefaultExpanded={this.props.groupDefaultExpanded}
+//           colKey={this.props.keyColumnName}
+//           getContextMenuItems={(params) => {
+//             return ["copy", "excelExport", "csvExport"];
+//           }}
+//           getDataPath={function (data) {
+//             return data.orgHierarchy;
+//           }}
+//           suppressContextMenu={true}
+//         />
+//       </div>
+//     );
+//   }
+// }

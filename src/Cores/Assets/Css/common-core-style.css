@@ -1,0 +1,740 @@
+/*#region Pagination*/
+.myPagination .ant-input-number-input {
+  height: 32px;
+}
+
+.pageItem {
+  display: flex;
+  min-width: 34px;
+  height: 34px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+  margin: 5px 0;
+  align-items: center;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.4rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  /* color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6; */
+}
+
+.myPagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.pageItem label {
+  padding: 0 5px;
+}
+
+/*#endregion Pagination*/
+
+/*#region Toolbar*/
+.tcd-toolbarcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.tcd-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.tcd-toolbar.incard-tcd {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tcd-toolbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
+  flex: auto;
+  gap: 10px;
+}
+
+.tcd-toolbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tcd-toolbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tcd-toolbarTable {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+/*#endregion Toolbar*/
+
+/*#region button*/
+
+.btnIcon-table {
+  font-size: 14px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  margin: 0;
+  min-width: 24px;
+}
+
+.btnIcon-table:focus {
+  /* outline: 1px solid; */
+  border: none;
+  outline: 0;
+}
+
+.btnIcon-table:hover {
+  background: rgb(238, 238, 238);
+}
+
+.btnIcon-table i {
+  margin: 0;
+}
+
+/* ButtonIcon */
+.btnIcon-image {
+  font-size: 16px;
+  padding: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btnIcon-image:focus {
+  outline: none;
+}
+
+.btnIcon-image i {
+  margin: 0;
+}
+
+.btnSuccess,
+.btnSuccess:focus {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnSuccess:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btnPrimary,
+.btnPrimary:focus {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btnPrimary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btnInfo,
+.btnInfo:focus {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnInfo:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+.btnDanger,
+.btnDanger:focus {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btnDanger:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/*#endregion button*/
+
+/*#region form*/
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.form-input-readonly-tcd {
+  background: #f4f7fa;
+}
+
+a[disabled] {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+i[disabled] {
+  pointer-events: none;
+  cursor: default;
+}
+
+span[disabled],
+span.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Hiển thị dấu *** khi nhập cho trường password */
+@font-face {
+  font-family: "password";
+  src: url(../Fonts/Password/default.ttf);
+}
+
+input.password {
+  font-family: "password";
+  -webkit-text-security: disc;
+}
+
+.input-icon-tcd {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/*#endregion form*/
+
+/*#endregion table*/
+
+/*#region react-date-picker - https://projects.wojtekmaj.pl/react-date-picker*/
+.react-calendar {
+  border-radius: 6px;
+}
+
+.react-date-picker__calendar--open,
+.react-date-picker__calendar--closed {
+  position: absolute;
+}
+
+.react-date-picker__wrapper {
+  border-color: #d9d9d9;
+  border-radius: 6px;
+  padding: 2px 8px;
+  height: 34px;
+}
+
+.react-date-picker__inputGroup__input:focus {
+  border: 1px solid #4096ff !important;
+}
+
+.react-date-picker {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.react-date-picker--disabled {
+  background-color: #f4f7fa;
+}
+
+/*#endregion react-date-picker*/
+
+/*#region popover*/
+.tcd-popover {
+  min-width: 300px;
+}
+
+.tcd-list-ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tcd-list-li {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tcd-list-li:hover {
+  background-color: #e9ecef;
+}
+
+.tcd-list-icon {
+  margin-right: 10px;
+  color: #7a798bed;
+}
+
+/*#endregion */
+
+/*#region scroll*/
+.scroll-x-tcd {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.scroll-tcd {
+  /* scrollbar-gutter: stable both-edges; */
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.scroll-tcd::-webkit-scrollbar,
+.scroll-x-tcd::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  border: 1px white solid;
+}
+
+.scroll-tcd::-webkit-scrollbar-track,
+.scroll-x-tcd::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border: 1px white solid;
+  border-radius: 6px;
+}
+
+.scroll-tcd::-webkit-scrollbar-thumb,
+.scroll-x-tcd::-webkit-scrollbar-thumb {
+  background: #c6c3c3;
+  border: 1px white solid;
+  border-radius: 6px;
+}
+
+.scroll-tcd::-webkit-scrollbar-thumb:hover,
+.scroll-x-tcd::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/*#endregion scroll*/
+
+/*#region prioritize*/
+.cardMain {
+  /* box-shadow: 0 3px 10px 0 rgb(0 0 0 / 5%); */
+  border: none;
+}
+
+.tcd-noBackground {
+  background-color: unset;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.row-tcd {
+  width: 100%;
+  display: grid;
+}
+
+.card-tcd {
+  /* margin: 1rem 0; */
+  background-color: white;
+  /* border: 1px solid rgb(203 213 225); */
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.card-header-tcd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px; /* 12px */
+  padding-right: 15px; /* 12px */
+  padding-top: 0.25rem; /* 4px */
+  padding-bottom: 0.25rem; /* 4px */
+  border-radius: 6px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.card-title-tcd {
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  padding-top: 0.25rem; /* 4px */
+  padding-bottom: 0.25rem; /* 4px */
+  color: rgb(71 85 105);
+  margin: 0;
+}
+
+.inputgroup-tcd {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.inputgroup-tcd > * {
+  border-radius: 0;
+  margin: 0;
+}
+
+.inputgroup-tcd > :first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.inputgroup-tcd > :last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.content-header-tcd {
+  border-bottom: 1px solid thistle;
+  background-color: rgba(235, 237, 239, 1);
+}
+
+.content-title-tcd {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(56 57 78 / 81%);
+  width: 100%;
+  margin: 0;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.content-body-tcd {
+  margin-top: 15px;
+}
+
+.tcd-main {
+  display: flex;
+  flex: auto;
+}
+
+.container-tcd {
+  width: 100%;
+  /* padding: 0 20px 10px 20px; */
+}
+
+.content-tcd {
+  padding: 0 20px 10px 20px;
+  background-color: rgba(235, 237, 239, 1);
+  border-radius: 6px;
+}
+
+.container-fluid-tcd {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .container-tcd {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-tcd {
+    max-width: 1320px;
+  }
+}
+
+.container-tcd.size-sm-tcd {
+  max-width: 450px;
+}
+
+.container-tcd.size-lg-tcd {
+  max-width: 100%;
+}
+
+.collapse-tcd > .ReactCollapse--collapse {
+  transition: 300ms;
+}
+/*#endregion prioritize*/
+
+/* a:hover{
+  color: inherit;
+} */
+
+/*#region Other*/
+.icon-tcd {
+  font-size: 1.1rem;
+}
+
+/* .w-full {
+  width: 100%;
+} */
+
+.flexCenter {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bgFull {
+  background-color: #f1f2f3;
+}
+
+.divContainerFull {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-content {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 3px 10px 0 rgb(0 0 0 / 5%);
+}
+
+.tcd-filter {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #fff;
+  /* margin-bottom: 1rem; */
+  border-radius: 6px;
+}
+
+.tabMain {
+  padding: 0;
+  border-radius: 6px;
+  background-color: unset;
+  box-shadow: unset;
+}
+
+.divMain {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .divMain {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .divMain {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .divMain {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .divMain {
+    max-width: 1320px;
+  }
+}
+
+.divContainer {
+  width: 100%;
+}
+
+.container-lg {
+  max-width: none;
+}
+
+.tcd-card {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.tcd-card-header {
+  border-bottom: 1px solid thistle;
+}
+
+.tcd-card-header-lv2 {
+  background-color: #dae7f5;
+}
+
+h1.tcd-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(56 57 78 / 81%);
+  width: 100%;
+  margin-bottom: 0;
+  padding: 10px 15px;
+}
+
+h2.tcd-card-title {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: rgb(56 57 78 / 81%);
+  width: 100%;
+  margin: 5px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 28px;
+}
+
+.tcd-card-body {
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.tcd-body {
+  background-color: rgba(235, 237, 239, 1);
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tcd-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.176);
+}
+
+.tcd-footer {
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.176);
+}
+
+.tcd-menu-active {
+  border: 1px solid rgb(138, 219, 229);
+  /* border-radius: 6px; */
+  border-width: 0px 0 1px 0;
+}
+
+.tcd-title-lv2 {
+  font-size: 18px;
+}
+
+.tcd-datetext-item {
+  border: unset;
+  border-radius: unset;
+  padding: 3px !important;
+  text-align: center;
+  height: unset;
+}
+
+.tcd-datetext-item2 {
+  border: unset !important;
+  border-radius: 6px;
+  height: 32px !important;
+}
+
+.tcd-datetext-item2 .ant-select-selector {
+  border: unset !important;
+  height: 32px !important;
+  padding: 0 3px !important;
+}
+
+.tcd-datetext-item2.ant-select-focused {
+  outline: 1px solid #4096ff;
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  border-radius: 0.25em;
+}
+
+.tcd-datetext-item2 .ant-select-selection-search {
+  left: 5px !important;
+}
+
+.tcd-datetext-item2 .ant-select-selection-item {
+  text-align: center !important;
+}
+
+.tcd-datetext-item2 .ant-select-selection-placeholder {
+  text-align: center !important;
+}
+
+.tcd-datetext-item:focus-visible {
+  outline: 1px solid #4096ff;
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  border-radius: 0.25em;
+}
+
+.tcd-datetext-item[readonly] {
+  background: #f4f7fa;
+}
+
+.tcd-datetext-slash {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2px;
+}
+
+/* KhongDungNua */
+.tcd-datetext-container {
+  display: flex;
+  /* padding: 0px 6px; */
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  align-items: center;
+  gap: 3px;
+}
+
+.p-button-label {
+  font-weight: 500;
+}
+
+.buttonicon-tcd.mapper-tcd {
+  height: 17px;
+  width: 1.35rem;
+}
+
+.p-menubar .p-submenu-list {
+  z-index: 1001;
+}
+/*#endregion Other*/
+
+/*#region Collapase*/
+.expandable {
+  min-height: 0;
+}
+
+/* Initially, set the grid rows to take up no space (height 0).
+     This effectively hides the content inside the wrapper element. */
+.wrapper {
+  display: grid;
+  overflow: hidden;
+  transition: grid-template-rows 200ms;
+  grid-template-rows: 0fr;
+}
+
+/* When the 'open' class is applied to the wrapper element, set the grid rows to take up all available space (height 1fr).
+     This expands the wrapper and shows the content inside. */
+.wrapper.is-open {
+  grid-template-rows: 1fr; /* 1fr means 1 fraction of available space */
+}
+/*#endregion Collapase*/

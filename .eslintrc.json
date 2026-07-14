@@ -1,0 +1,94 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    // "airbnb-base",
+    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
+    "plugin:prettier/recommended"
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended"
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    // "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "prettier",
+    "simple-import-sort",
+    "unused-imports"
+  ],
+  // "compilerOptions": {
+  //   "noUnusedLocals": true,
+  //   "noUnusedParameters": true
+  // },
+  "rules": {
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    // "react/jsx-uses-react": "off",
+    // "@typescript-eslint/interface-name-prefix": "off",
+    // "@typescript-eslint/explicit-function-return-type": "off",
+    // "@typescript-eslint/explicit-module-boundary-types": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    // "@typescript-eslint/no-unused-vars": "off",
+    // "no-unused-vars": [
+    //   "error",
+    //   { "vars": "local", "args": "after-used", "ignoreRestSiblings": true }
+    // ],
+    // "no-unused-vars": "off",
+    // "comma-dangle": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "none",
+        // "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^(_|TEntity|.*Model|.*Enum)$",
+        "ignoreRestSiblings": true
+      }
+    ],
+
+    // "unused-imports/no-unused-imports": "error",
+    // "no-underscore-dangle": "off",
+    // "@typescript-eslint/naming-convention": "off",
+    // "no-param-reassign": [2, { "props": false }],
+    // "react-hooks/rules-of-hooks": "warn",
+
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages từ thư viện
+          ["^(?!@src|\\.).*(?<!css)$"],
+
+          // nội bộ trong app
+          ["^(@src).*(?<!css)$"],
+
+          // nội bộ trong cùng folder
+          ["^(\\.).*(?<!css)$"],
+
+          // // Style imports.
+          ["^.*(.css)$"],
+
+          // Những thứ khác không xác định
+          ["^.*$"]
+        ]
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off"
+  }
+}

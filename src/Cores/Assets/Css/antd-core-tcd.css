@@ -1,0 +1,15 @@
+/* .ant-select-disabled{
+  background-color: red;
+} */
+
+.ant-modal-content {
+  padding: 0 !important;
+}
+
+.confirm-tcd .ant-modal-content {
+  padding: 20px 24px !important;
+}
+
+:where(.css-dev-only-do-not-override-djtmh8).ant-popover .ant-popover-inner {
+  padding: unset;
+}

@@ -1,0 +1,153 @@
+/*#region Post*/
+.tcd-post-mainCategory,
+.tcd-post-mainDetail {
+  font-size: 16px;
+}
+
+.editor-post .jodit-wysiwyg {
+  /* max-height: 100%; */
+  max-height: 700px;
+  min-height: 700px !important;
+  max-width: 700px;
+  margin: auto !important;
+  border: 1px solid rgb(156, 156, 156);
+}
+
+.jodit_fullsize-box_true .jodit-wysiwyg {
+  max-height: 100%;
+}
+
+.editor-post .jodit-wysiwyg img {
+  max-width: 100%;
+  height: auto;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+#post-body .bg-dark {
+  background-color: #1e2024 !important;
+}
+
+#post-body .text-primary {
+  color: #ffcc00 !important;
+}
+
+#post-body .text-body {
+  color: #9a9da2 !important;
+}
+
+pre.tcd-post-description {
+  font-size: 1rem;
+  white-space: pre-wrap;
+  /* Since CSS 2.1 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+.tcd-post-mainCategory,
+.tcd-post-mainDetail {
+  max-width: 700px;
+  padding: 15px;
+  margin: auto;
+}
+
+.tcd-post-mainDetail img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tcd-danhmuc-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tcd-danhmuc-item {
+  border-bottom: 1px solid rgb(201 201 201);
+  margin: 10px;
+}
+
+.tcd-post-title {
+  font-size: 18px;
+}
+
+/*#endregion*/
+
+/*#region gia phả*/
+.familyTree-button {
+  /* margin: 0 0.25rem; */
+}
+
+.familyTree-card {
+  font-size: 13px;
+}
+
+.familyTree-cardMain {
+  border: 1px solid #6c6c6d1f;
+  border-radius: 5%;
+  padding: 5px;
+  min-width: 100px;
+}
+
+.familyTree-cardPlus {
+  border: 1px solid #508def82;
+  border-radius: 5%;
+  padding: 5px;
+  margin-left: 5px;
+  min-width: 100px;
+}
+
+.familyTree-card {
+  display: flex;
+}
+
+.btnPopover-item {
+  border-bottom: #6c6c6d;
+  cursor: pointer;
+}
+
+.familyTree-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.familyTree-name {
+  margin: 3px 0;
+}
+
+.p-organizationchart .p-organizationchart-node-content {
+  padding: 0.75rem;
+}
+
+.familyTree-print-main .familyTree-cardMain {
+  min-width: unset;
+  width: 70px;
+}
+
+.familyTree-print-main .familyTree-name {
+  margin: 0;
+}
+
+.familyTree-print-main .familyTree-cardPlus {
+  min-width: unset;
+  width: 70px;
+}
+
+.familyTree-print-main .p-organizationchart .p-organizationchart-node-content {
+  padding: 5px;
+}
+
+.familyTree-print-main .p-organizationchart-table > tbody > tr > td {
+  padding: 0 1px;
+}
+
+#cotainerOrg .p-organizationchart-node-content {
+  border: 1px solid #6d7478;
+  border-radius: 5px;
+}
+
+/*#endregion*/
+
+/*#region Other*/
+
+/*#endregion*/

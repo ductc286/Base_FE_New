@@ -1,0 +1,8 @@
+.popover-tcd {
+  box-shadow: 0 2px 4px rgba(0, 10, 20, 0.1);
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: calc(100vw - 10px);
+  z-index: 1001;
+}
