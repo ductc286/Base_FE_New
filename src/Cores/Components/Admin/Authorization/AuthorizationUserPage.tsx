@@ -115,7 +115,7 @@ export default function AuthorizationUserPage() {
         sortable: true,
         width: "100px",
         render: (param: ColumnRenderParamTcd<CoreRoleUserModel>) =>
-          DateTimeHelper.getDateString(param.rowData.insertTime),
+          DateTimeHelper.getDateTimeString(param.rowData.insertTime),
       },
     ],
     []
@@ -562,8 +562,9 @@ export default function AuthorizationUserPage() {
               height={CommonConst.table.heightDefault}
               isLoading={loadingData.list}
               columnKey="coreUserId"
+              keySelecteds={keySelecteds}
               onSelectChange={(param) => {
-                setKeySelecteds(param.keyValues);
+                setKeySelecteds(param.keyValues);                
               }}
               onSortChange={handleTableSortChange}
               ref={tableRef}

@@ -234,10 +234,10 @@ export default function PostFormCpn(props: Readonly<FormPropsModel<unknown>>) {
         if (res.isSuccess) {
           useToastState.showToast(NotifyTypeEnum.success, res.message);
           if (formState.watch("isEditAfterAdd")) {
-            getData(FormModeEnum.edit, res.data?.corePostCategoryId);
+            getData(FormModeEnum.edit, res.data?.corePostId);
             props.onFormModeChange?.({
               formMode: FormModeEnum.edit,
-              recordId: res.data?.corePostCategoryId,
+              recordId: res.data?.corePostId,
             });
           }
           props.onDataChange?.();
@@ -989,6 +989,7 @@ function ListHistoryCpn(props: Readonly<ListHistoryCpnModel>) {
     () => [
       { field: "statusText", header: "Trạng thái", width: 100 },
       { field: "typeText", header: "Hành động", width: 100 },
+      { field: "userInsert", header: "Người thực hiện", width: 100 },
       { field: "note", header: "Ghi chú", minWidth: 50 },
       {
         field: "timeChangeStatus",
